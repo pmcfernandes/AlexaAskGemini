@@ -1,0 +1,80 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-01-01T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v8.0.0",
+  "resources": [
+    {
+      "_id": "req_launch",
+      "parentId": "wrk_alexa_gemini",
+      "modified": 1690000000000,
+      "created": 1690000000000,
+      "url": "http://localhost:3000/alexa",
+      "name": "1. Testar LaunchRequest (Abertura)",
+      "description": "Simula o comando: Alexa, abra assistente gemini",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"version\": \"1.0\",\n  \"session\": {\n    \"new\": true,\n    \"sessionId\": \"amzn1.echo-api.session.test1\",\n    \"application\": {\n      \"applicationId\": \"amzn1.ask.skill.test\"\n    },\n    \"user\": {\n      \"userId\": \"amzn1.ask.account.test\"\n    }\n  },\n  \"context\": {\n    \"System\": {\n      \"apiEndpoint\": \"https://api.amazonalexa.com\"\n    }\n  },\n  \"request\": {\n    \"type\": \"LaunchRequest\",\n    \"requestId\": \"amzn1.echo-api.request.test1\",\n    \"locale\": \"pt-BR\",\n    \"timestamp\": \"2024-01-01T12:00:00Z\"\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690000000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_intent",
+      "parentId": "wrk_alexa_gemini",
+      "modified": 1690000000000,
+      "created": 1690000000001,
+      "url": "http://localhost:3000/alexa",
+      "name": "2. Testar AskGeminiIntent (Pergunta ao Gemini)",
+      "description": "Simula o usuário fazendo uma pergunta",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"version\": \"1.0\",\n  \"session\": {\n    \"new\": false,\n    \"sessionId\": \"amzn1.echo-api.session.test1\",\n    \"application\": {\n      \"applicationId\": \"amzn1.ask.skill.test\"\n    },\n    \"user\": {\n      \"userId\": \"amzn1.ask.account.test\"\n    }\n  },\n  \"context\": {\n    \"System\": {\n      \"apiEndpoint\": \"https://api.amazonalexa.com\"\n    }\n  },\n  \"request\": {\n    \"type\": \"IntentRequest\",\n    \"requestId\": \"amzn1.echo-api.request.test2\",\n    \"locale\": \"pt-BR\",\n    \"timestamp\": \"2024-01-01T12:00:00Z\",\n    \"intent\": {\n      \"name\": \"AskGeminiIntent\",\n      \"confirmationStatus\": \"NONE\",\n      \"slots\": {\n        \"question\": {\n          \"name\": \"question\",\n          \"value\": \"me explique de forma resumida o que são buracos negros\",\n          \"confirmationStatus\": \"NONE\"\n        }\n      }\n    }\n  }\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1690000000001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_alexa_gemini",
+      "parentId": null,
+      "modified": 1690000000000,
+      "created": 1690000000000,
+      "name": "Alexa Gemini Skill",
+      "description": "Coleção para testar requisições para a skill local da Alexa",
+      "scope": "collection",
+      "_type": "workspace"
+    }
+  ]
+}

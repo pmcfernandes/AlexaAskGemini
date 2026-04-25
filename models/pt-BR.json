@@ -1,0 +1,50 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "inteligência artificial",
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      },
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AskGeminiIntent",
+          "slots": [
+            {
+              "name": "question",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "pergunte {question}",
+            "me diga {question}",
+            "sobre {question}",
+            "o que é {question}",
+            "quem é {question}",
+            "onde fica {question}",
+            "pesquise {question}",
+            "busque {question}",
+            "responda para mim {question}",
+            "qual é {question}",
+            "como fazer {question}",
+            "por que {question}"
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}
